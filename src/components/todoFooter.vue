@@ -24,30 +24,11 @@ export default {
     },
     methods: {
         clear() {
-            todoStorage.clear();
+            localStorage.removeItem('vue-todolist');
             this.$emit('delete');
         }
     }
 }
-const STORAGE_KEY = 'vue-todolist';
-let todoStorage = {
-    fetch() {
-        let todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-        if (todos.length === 0) {
-          return [];
-        }
-        todos.forEach((todo, index) => {
-        todo.id = index;
-        })
-        return todos;
-    },
-    save(todos) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
-    },
-    clear() {
-        localStorage.removeItem(STORAGE_KEY);
-    }
-};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

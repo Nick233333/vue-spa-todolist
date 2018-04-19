@@ -32,49 +32,51 @@ import todoItems from './components/todoItems'
 import todoFooter from './components/todoFooter'
 
 const STORAGE_KEY = 'vue-todolist';
-    let todoStorage = {
-      fetch() {
+let todoStorage = {
+    fetch() {
         let todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
         if (todos.length === 0) {
-          return [];
-        }
+            return [];
+        }   
         todos.forEach((todo, index) => {
-          todo.id = index;
+            todo.id = index;
         })
         return todos;
-      },
-      save(todos) {
+    },
+    save(todos) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
-      },
-      clear() {
+    },
+    clear() {
         localStorage.removeItem(STORAGE_KEY);
-      }
-    };
+    }
+};
 
 export default {
-  name: 'App',
-  components: {
-    todoHeader,todoForm,todoItems,todoFooter
-  },
-  data() {
-    return {
-      todos: todoStorage.fetch(),
-    }
-    
-  },
-  watch: {
-    todos: {
-      handler(todos) {
-      todoStorage.save(todos);
+    name: 'App',
+    components: {
+        "todo-header": todoHeader,
+        "todo-form": todoForm,
+        "todo-items": todoItems,
+        "todo-footer":todoFooter
     },
-    deep: true,
+    data() {
+        return {
+            todos: todoStorage.fetch(),
+        }
+    },
+    watch: {
+        todos: {
+            handler(todos) {
+            todoStorage.save(todos);
+        },
+        deep: true,
+        }
+    },
+    methods: {
+        clearAll() {
+            this.todos = [];
+        }
     }
-  },
-  methods: {
-    clearAll() {
-      this.todos = [];
-    }
-  }
 }
 </script>
 
