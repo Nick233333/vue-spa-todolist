@@ -34,7 +34,7 @@ export default {
             if (!newTodo.date) {
                 let date = new Date();
                 let month = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
-                newTodo.date = `${date.getFullYear().toString()}-${month}-${date.getDate().toString()}`;
+                newTodo.date = `${date.getFullYear()}-${month}-${date.getDate()}`;
             }
             this.todos.push(newTodo);
             this.newTodo = {id: null, title: '', date: '', completed: false};
