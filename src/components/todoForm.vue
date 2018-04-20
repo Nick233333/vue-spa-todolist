@@ -33,10 +33,7 @@ export default {
             newTodo.id = this.num++;
             if (!newTodo.date) {
                 let date = new Date();
-                let month = date.getMonth().toString();
-                if (month < 10) {
-                    month = '0' + month;
-                }
+                let month = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
                 newTodo.date = `${date.getFullYear().toString()}-${month}-${date.getDate().toString()}`;
             }
             this.todos.push(newTodo);
