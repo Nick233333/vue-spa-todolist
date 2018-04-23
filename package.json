@@ -10,7 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2"
+    "bootstrap-vue": "^2.0.0-rc.8",
+    "jQuery": "^1.7.4",
+    "vue": "^2.5.2",
+    "webpack-dev-server": "^2.11.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
