@@ -15,6 +15,8 @@
 </template>
 
 <script>
+let  dayjs = require('dayjs');
+
 export default {
     name: 'todoForm',
     props: ['todos'], 
@@ -32,9 +34,9 @@ export default {
             newTodo.completed = false;
             newTodo.id = this.num++;
             if (!newTodo.date) {
-                let date = new Date();
-                let month = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
-                newTodo.date = `${date.getFullYear()}-${month}-${date.getDate()}`;
+                let month = dayjs().month() + 1;
+                month = month > 9 ? month : ('0' + month)
+                newTodo.date = `${dayjs().year()}-${month}-${dayjs().date()}`;
             }
             this.todos.push(newTodo);
             this.newTodo = {id: null, title: '', date: '', completed: false};
