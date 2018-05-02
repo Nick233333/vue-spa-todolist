@@ -1,5 +1,12 @@
 # vue-cli
 
+# 依赖
+
+```
+bootstrap v4
+day.js 
+```
+
 > A Vue.js project
 
 ## Build Setup
