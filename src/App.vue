@@ -4,14 +4,14 @@
       <div class="col-md-10 offset-md-1">
         <div class="card">
           <div class="card-header bg-primary text-white">
-            <todo-header :todos="todos"></todo-header>  
+            <todo-header :todos="todos"></todo-header>
           </div>
           <div class="card-body">
             <todo-form :todos="todos"></todo-form>
             <todo-items :todos="todos"></todo-items>
           </div>
           <div class="card-footer text-muted">
-            <todo-footer :todos="todos" @delete="clearAll"></todo-footer> 
+            <todo-footer :todos="todos" @delete="clearAll"></todo-footer>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@ let todoStorage = {
         let todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
         if (todos.length === 0) {
             return [];
-        }   
+        }
         todos.forEach((todo, index) => {
             todo.id = index;
         })
@@ -81,8 +81,11 @@ export default {
 </script>
 
 <style>
+    .card {
+        height: 93vh;
+    }
     .list-group {
-        height: 400px;
+        height: 55vh;
         overflow-y: auto;
     }
     [v-cloak] { display: none }
