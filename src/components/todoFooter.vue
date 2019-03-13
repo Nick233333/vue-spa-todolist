@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'todoFooter',
+    name: 'TodoFooter',
     props: ['todos'],
     computed: {
         uncompleted() {

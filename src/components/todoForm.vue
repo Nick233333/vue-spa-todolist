@@ -18,14 +18,14 @@
 let  dayjs = require('dayjs');
 
 export default {
-    name: 'todoForm',
-    props: ['todos'], 
+    name: 'TodoForm',
+    props: ['todos'],
     data() {
         return {
             num: 1,
             newTodo: {id: null, title: '', date: '', completed: false}
         }
-    }, 
+    },
     methods: {
         addTodo(newTodo) {
             if (newTodo.title.trim() === '') {

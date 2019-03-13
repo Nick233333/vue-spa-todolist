@@ -4,7 +4,7 @@
 
 ```
 bootstrap v4
-day.js 
+day.js
 ```
 
 > A Vue.js project

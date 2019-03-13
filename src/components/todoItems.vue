@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    name: 'todoItems',
+    name: 'TodoItems',
     props: ['todos'],
     methods: {
         deleteTodo(index) {

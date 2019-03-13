@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name: 'todoHeader',
+    name: 'TodoHeader',
     props: ['todos'],
     computed: {
         count() {
